@@ -6,71 +6,43 @@
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script>
-var mybody = document.getElementsByTagName('body')[0];
-
-var h = document.documentElement.clientHeight;
-
-mybody.style.height = h + 'px';
-
-//滑动处理
-
-var startX, startY, moveEndX, moveEndY, X, Y;   
-
-mybody.addEventListener('touchstart', function(e) {
-
-    e.preventDefault();
-
-    startX = e.touches[0].pageX;
-
-    startY = e.touches[0].pageY;
-
-}, false);
-
-mybody.addEventListener('touchmove', function(e) {
-
-    e.preventDefault();
-
-    moveEndX = e.changedTouches[0].pageX;
-
-    moveEndY = e.changedTouches[0].pageY;
-
-    X = moveEndX - startX;
-
-    Y = moveEndY - startY;
-
-    
-
-    if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
-
-        alert("向右");
-
-    }
-
-    else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
-
-        alert("向左");
-
-    }
-
-    else if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
-
-        alert("向下");
-
-    }
-
-    else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
-
-        alert("向上");
-
-    }
-
-    else{
-
-        alert("没滑动");
-
-    }
-
-});
+  $(function(){
+                    //给body强制定义高度
+                    var windowHeight = $(window).height(),
+                　　$body = $("body");
+                　　// console.log($(window).height()); //627
+                　　// console.log($('body').height()); //0
+                　　$body.css("height", windowHeight); //重要代码
+                
+                $("body").on("touchstart", function(e) {
+            　　　　//e.preventDefault();//会使所有的触屏都失效，不能用
+            　　　　startX = e.originalEvent.changedTouches[0].pageX,
+            　　　　startY = e.originalEvent.changedTouches[0].pageY;
+            　　});
+            　　$("body").on("touchmove", function(e) {
+            　　　　//e.preventDefault();
+            　　　　moveEndX = e.originalEvent.changedTouches[0].pageX,
+            　　　　moveEndY = e.originalEvent.changedTouches[0].pageY,
+            　　　　X = moveEndX - startX,
+            　　　　Y = moveEndY - startY;
+            
+            　　　　if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
+            　　　　　　alert("right");
+            　　　　}
+            　　　　else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
+            　　　　　　alert("left");
+            　　　　}
+            　　　　else if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
+            　　　　　　alert("bottom");
+            　　　　}
+            　　　　else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
+            　　　　　　alert("top");
+            　　　　}
+            　　　　else{
+            　　　　　　alert("just touch");
+            　　　　}
+            　　});
+            })
 </script>
 </head>
 <body>

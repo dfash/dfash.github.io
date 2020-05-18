@@ -5,42 +5,31 @@
 <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+$(document).on("pagecreate","#pageone",function(){
+  $(document).on("scrollstart",function(){
+    alert("开始滚动!");
+  });                       
+});
+</script>
 </head>
 <body>
 
 <div data-role="page" id="pageone">
   <div data-role="header">
-    <h1>欢迎来到我的主页</h1>
+    <h1>scrollstart 事件</h1>
   </div>
 
   <div data-role="main" class="ui-content">
-    <p>点击链接查看右到左滑动效果。</p>
-    <a href="#pagetwo" data-transition="slidefade">右到左滑动到下一页</a>
+    <p><b>提示：</b>如果未出现滚动条，请尝试调整窗口尺寸。</p>
+  
+    <p>可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。可用于滚动的文本。。</p>
   </div>
 
   <div data-role="footer">
-    <h1>底部文本</h1>
+    <h1>页脚文本</h1>
   </div>
 </div> 
 
-<div data-role="page" id="pagetwo">
-  <div data-role="header">
-    <h1>欢迎来到我的主页</h1>
-  </div>
-
-  <div data-role="main" class="ui-content">
-    <p>点击链接返回上一个页面。<b>注意</b>: fade（淡入）效果是默认的</p>
-    <a href="#pageone">返回第一个页面</a>
-  </div>
-
-  <div data-role="footer">
-    <h1>底部文本</h1>
-  </div>
-</div> 
-  <script>
-  $(document).on("scrollstart",function(){
-alert("开始滚动!");
-});
-  </script>
 </body>
 </html>
